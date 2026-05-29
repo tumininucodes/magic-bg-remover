@@ -1,16 +1,8 @@
 <script lang="ts">
 	import favicon from '$lib/assets/favicon.svg?url';
 	import './global.css';
-	import { onMount } from 'svelte';
 
 	let { children } = $props();
-
-	onMount(() => {
-		// Initialize theme from localStorage or system preference
-		const savedTheme = localStorage.getItem('theme') || 
-			(window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-		document.documentElement.setAttribute('data-theme', savedTheme);
-	});
 </script>
 
 <svelte:head>

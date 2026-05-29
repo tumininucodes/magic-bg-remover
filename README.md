@@ -12,7 +12,6 @@
   <a href="#features">Features</a> •
   <a href="#screenshots">Screenshots</a> •
   <a href="#tech-stack">Tech Stack</a> •
-  <a href="#getting-started">Getting Started</a> •
   <a href="#project-structure">Project Structure</a>
 </p>
 
@@ -28,59 +27,56 @@ No uploads to any server. No account required. Your images never leave your devi
 
 ## Screenshots
 
-### Hero — Before/After Comparison Slider
 ![Hero section with before/after slider](static/screenshots/screenshot-hero.png)
 
-### Upload Zone — Drag, Drop, Paste or URL
 ![Upload zone with sample images](static/screenshots/screenshot-upload.png)
 
-### Result Viewer — Background Removed with Download & Editor
 ![Result viewer with background customizer and download panel](static/screenshots/screenshot-result.png)
 
 ---
 
 ## Features
 
-### 🤖 AI-Powered Background Removal
+### AI-Powered Background Removal
 - Uses **[briaai/RMBG-1.4](https://huggingface.co/briaai/RMBG-1.4)** — a state-of-the-art segmentation model purpose-built for background removal
 - Powered by **[Hugging Face Transformers.js](https://huggingface.co/docs/transformers.js)** — runs the AI model natively in WebAssembly with zero server dependency
 - Model weights (~170 MB) are downloaded once and cached permanently in your browser's IndexedDB
 
-### 🔒 Privacy First
+### Privacy First
 - **100% client-side** — your images are never uploaded to any server
 - No account, no API key, no watermarks
 - Works offline after the initial model download
 
-### 📤 Flexible Image Input
+### Flexible Image Input
 - **Upload** via file picker (JPG, PNG, WebP, and more)
 - **Drag & drop** anywhere on the upload zone
 - **Paste** from clipboard with `Ctrl` + `V`
 - **Fetch from URL** — paste an image URL directly
 
-### 🖼️ Interactive Before/After Slider
+### Interactive Before/After Slider
 - Drag the hero slider to compare original vs. background-removed result in real time
 
-### 🎨 Background Customizer
+### Background Customizer
 After removing the background, instantly preview and download your subject on:
 - **Transparent** (checkerboard preview, downloads as PNG)
 - **Solid color** — 8 preset swatches + a full color picker
 - **Preset scene images** — Studio, Nature, Beach, Abstract
 - **Custom background** — upload your own image
 
-### ✏️ Erase & Restore Brush Editor
+### Erase & Restore Brush Editor
 - Canvas-based brush tool to manually **erase** or **restore** parts of the result
 - Adjustable brush size and mode toggle
 - Undo / redo support
 
-### ⬇️ Download Options
+### Download Options
 - Download at preview size or full HD resolution
 - PNG with alpha transparency or composited with your chosen background
 
-### 🌙 Light / Dark Mode
+### Light / Dark Mode
 - System preference detection on first load
 - Toggle in the header, persists across sessions via `localStorage`
 
-### 🗂️ Sample Images
+### Sample Images
 - Three built-in sample categories to try without your own photos: **People**, **Products**, **Animals**
 
 ---
@@ -103,31 +99,6 @@ Earlier versions of this project used `@imgly/background-removal`, which suffere
 
 ---
 
-## Getting Started
-
-### Prerequisites
-
-- [Node.js](https://nodejs.org/) v18 or later
-- npm
-
-### Installation
-
-```bash
-# Clone the repository
-git clone https://github.com/maestro-t/magic-bg-remover.git
-cd magic-bg-remover
-
-# Install dependencies
-npm install
-```
-
-### Development
-
-```bash
-npm run dev
-```
-
-Open [http://localhost:5173](http://localhost:5173) in your browser.
 
 > **Note on first use:** The AI model (`briaai/RMBG-1.4`, ~170 MB) is downloaded from Hugging Face on first image upload and cached in your browser. Subsequent uses are instant.
 

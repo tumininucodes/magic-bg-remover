@@ -11,6 +11,12 @@ export default defineConfig({
 		exclude: ['@huggingface/transformers']
 	},
 
+	// Prevent @huggingface/transformers (and its ~170MB WASM/ONNX binaries)
+	// from ever being bundled into the SSR/server build. This is a client-only library.
+	ssr: {
+		external: ['@huggingface/transformers']
+	},
+
 	server: {
 		headers: {
 			// Required for SharedArrayBuffer (used by transformers.js for multi-threading)

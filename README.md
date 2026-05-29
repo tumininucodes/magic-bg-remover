@@ -8,13 +8,6 @@
   <strong>100% free, client-side background removal — powered by AI, running entirely in your browser.</strong>
 </p>
 
-<p align="center">
-  <a href="#features">Features</a> •
-  <a href="#screenshots">Screenshots</a> •
-  <a href="#tech-stack">Tech Stack</a> •
-  <a href="#project-structure">Project Structure</a>
-</p>
-
 ---
 
 ## Overview
@@ -112,37 +105,3 @@ npm run preview
 > **Deployment note:** The server must send `Cross-Origin-Opener-Policy: same-origin` and `Cross-Origin-Embedder-Policy: credentialless` headers to enable `SharedArrayBuffer` for multi-threaded WASM inference. These are configured in [`src/hooks.server.ts`](src/hooks.server.ts) and [`vite.config.ts`](vite.config.ts).
 
 ---
-
-## Project Structure
-
-```
-magic-bg-remover/
-├── src/
-│   ├── lib/
-│   │   ├── backgroundRemoval.ts   # AI engine — loads RMBG-1.4 & runs inference
-│   │   └── components/
-│   │       ├── Header.svelte       # Navigation + theme toggle
-│   │       ├── Hero.svelte         # Before/after comparison slider
-│   │       ├── UploadZone.svelte   # File picker, drag & drop, URL fetch, paste
-│   │       ├── ProcessingState.svelte # Loading / progress UI
-│   │       ├── ResultViewer.svelte # Result preview + background customizer + download
-│   │       ├── InteractiveEditor.svelte # Canvas brush erase/restore tool
-│   │       └── Footer.svelte
-│   ├── routes/
-│   │   ├── +layout.svelte         # App shell, SEO, fonts, favicon
-│   │   ├── +page.svelte           # Main page — orchestrates all stages
-│   │   └── global.css             # Tailwind v4 + design tokens (CSS variables)
-│   └── hooks.server.ts            # COOP/COEP headers for cross-origin isolation
-├── static/
-│   ├── hero-original.png          # Hero slider — original image
-│   ├── hero-transparent.png       # Hero slider — background removed image
-│   ├── favicon.png                # App icon
-│   └── samples/                   # Built-in sample images (portrait, shoe, pet)
-└── vite.config.ts                 # Vite config with Tailwind + WASM exclusions
-```
-
----
-
-## License
-
-MIT
